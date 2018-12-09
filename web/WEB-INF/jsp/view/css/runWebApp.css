@@ -1,0 +1,156 @@
+/* The sidenav */
+.sidenav {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #8b0000;
+  overflow-x: hidden;
+  padding-top: 20px;
+  float: left;
+}
+
+.welcome {
+	font-size:		60px;
+	color: 			#434343;
+	padding:		30px;
+	margin:			30px;
+	text-align:		center;
+}
+
+.sidenav a:link, a:visited {
+	font-size:		20px;
+	color:			#8b0000;
+	font-family: 	Arial, Helvetica, sans-serif;
+	margin: 		10px;
+}
+
+table#menuTable {
+	text-align:		center;
+	border:			1px solid black;
+}
+
+table#menuTable tr:nth-child(even) {
+    background-color: #eeeeee;
+}
+
+table#menuTable tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.sideBuff {
+  background-color: #8b0000;
+  height:	35px;
+}
+
+.entryPanel {
+	padding:		40px;
+	padding-top:	0px;
+}
+
+.main {
+  	height: 100%;
+  	min-height:	1000px;
+  	width: 	80%;
+	top: 	0;
+  	left: 	0;
+  	background-color:	#c0c0c0;
+	padding:	20px;
+}
+
+.main h2 {
+	font-size:		28px;
+	text-align:		center;
+	color:			#ffffff;
+	font-family: 	Arial, Helvetica, sans-serif;
+	font-weight:	bold;
+	width:			100%;
+	background-color:	#8b0000;
+	margin:		 	0px;
+    padding:		40px;
+    top:			0;
+}
+
+.main h3 {
+	font-size:		20px;
+	text-align:		left;
+	color:			#111111;
+	font-family: 	Arial, Helvetica, sans-serif;
+	font-weight:	bold;
+	margin:		 	0px;
+    padding:		40px;
+    padding-top:	0px;
+    padding-bottom:	10px;
+}
+
+.main h4 {
+	font-size:		16px;
+	text-align:		left;
+	color:			#8b0000;
+	font-family: 	Arial, Helvetica, sans-serif;
+	font-weight:	bold;
+	margin:		 	0px;
+    padding:		40px;
+    padding-top:	0px;
+    padding-bottom:	10px;
+}
+
+.entryPanel {
+	border:			1px solid black;
+	margin-bottom:	20px;
+	width:			80%;
+}
+
+.entryPanel input[type=submit] {
+	font-size:		16px;
+	text-align:		center;
+	color:			#8b0000;
+	font-family: 	Arial, Helvetica, sans-serif;
+	font-weight:	bold;
+	margin:		 	0px;
+    padding:		10px;
+}
+
+.entryPanel h4 {
+	font-size:		16px;
+	text-align:		left;
+	color:			#8b0000;
+	font-family: 	Arial, Helvetica, sans-serif;
+	font-weight:	bold;
+	margin:		 	0px;
+    padding:		10px;
+}
+
+.main table {
+	border:			2px solid black;
+}
+
+.main table th {
+	background-color:	#8b0000;
+	text-align:			center;
+	color:				#ffffff;
+	font-size:			16px;
+	border:				2px solid black;
+}
+
+.main table tr:nth-child(even) {
+    background-color: #eeeeee;
+}
+
+.main table tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+th {
+	font-family: Verdana, Helvetica, sans-serif;
+	font-size: 16;
+	color: #434343;
+	padding: 10px;
+}
+
