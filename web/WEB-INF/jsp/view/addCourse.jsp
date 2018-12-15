@@ -17,6 +17,7 @@
 			<form method="post">
 	    	<div id="entryPanel" class="entryPanel">
 			<h4>NEW COURSE DETAILS</h4> 
+			<br/><br/>
 			Course: <input type="text" name="crseDesc" maxlength="50" required>
 			Miles: <input type="number" name="crseMiles" min="0.01" max="500" step="0.01" required>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

@@ -28,17 +28,17 @@
 			</div>
 			<h4>LIFETIME RECORDS</h4>
 			<br/>
-			<TABLE>
+			<TABLE id="compRecs">
 			<TR>
-			<TH style="text-align: center;">ID</TH>
-			<TH style="text-align: center;">Course</TH>
-			<TH style="text-align: center;">Miles</TH>
-			<TH style="text-align: center;">Total</TH>
-			<TH style="text-align: center;">Best Time</TH>
-			<TH style="text-align: center;">Best Time Date</TH>
-			<TH style="text-align: center;">Worst Time</TH>
-			<TH style="text-align: center;">Worst Time Date</TH>
-			<TH style="text-align: center;">Average Time</TH>
+			<TH style="text-align: center;" class="rid">ID</TH>
+			<TH style="text-align: center;" class="course">Course</TH>
+			<TH style="text-align: center;" class="miles">Miles</TH>
+			<TH style="text-align: center;" class="total">Total</TH>
+			<TH style="text-align: center;" class="time">Best Time</TH>
+			<TH style="text-align: center;" class="date">Best Time Date</TH>
+			<TH style="text-align: center;" class="time">Worst Time</TH>
+			<TH style="text-align: center;" class="date">Worst Time Date</TH>
+			<TH style="text-align: center;" class="time">Average Time</TH>
 			</TR>
 			<% for(int rec = 0; rec <lifeRecs.size(); rec++) {    %>
 			<TR>
@@ -57,16 +57,16 @@
 			</TABLE>
 
 			<br/><br/>
-			<h3>COMPLETED RUNS</h3>
+			<h4>COMPLETED RUNS</h4>
 			<br/><br/>
-			<TABLE>
+			<TABLE id="lifeCompRuns">
 			<TR>
-			<TH style="text-align: center;">DATE</TH>
-			<TH style="text-align: center;">RUN ID</TH>
-			<TH style="text-align: center;">COURSE</TH>
-			<TH style="text-align: center;">COURSE ID</TH>
-			<TH style="text-align: center;">MILEAGE</TH>
-			<TH style="text-align: center;">TIME</TH>
+			<TH style="text-align: center;" class="date">DATE</TH>
+			<TH style="text-align: center;" class="rid">RUN ID</TH>
+			<TH style="text-align: center;" class="course">COURSE</TH>
+			<TH style="text-align: center;" class="cid">COURSE ID</TH>
+			<TH style="text-align: center;" class="miles">MILEAGE</TH>
+			<TH style="text-align: center;" class="time">TIME</TH>
 			</TR>
 			<% for(int row = 0; row <lifeRuns.size(); row++) {    %>
 			<TR>

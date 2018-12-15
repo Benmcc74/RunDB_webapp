@@ -42,7 +42,7 @@
 			<br/><br/>
 			<form method="post">
 	    	<div id="entryPanel" class="entryPanel">
-			<h4>DATE</h4> 
+			<h5>DATE</h5> 
 			Day: <input type="number" name="day" id="day" min="1" max="31" step="1" maxlength="2" size="3" required readonly>
 			Month: <input type="number" name="month" id="month" min="1" max="12" step="1" maxlength="2" size="3" required readonly>
 			Year: <input type="number" name="year" id = "year" min="2000" max="2050" step="1" maxlength="4" size="5" required readonly>
@@ -50,14 +50,14 @@
 			<input type="submit" value="Delete the selected Run"> 
 			<input type="hidden" name="runId" id="runId">
 			<br/><br/>
-			<h4>COURSE</h4>
+			<h5>COURSE</h5>
 			<select name="course" id ="course" required>
 				<% for(ArrayList<String> crse: crseList) { %>
 					<option value="<%= crse.get(0) %>" ><%= crse.get(1) %></option>
 				<% } %>
 			</select>
 			<br/><br/>
-			<h4>TIME</h4> 
+			<h5>TIME</h5> 
 			Hours:	<input type="number" name="hours" id="hours" min="0" max="5" step="1" maxlength="1" size="2" required readonly>
 			Minutes: <input type="number" name="mins" id="mins" min="0" max="59" step="1" maxlength="2" size="3" required readonly>
 			Seconds: <input type="number" name="secs" id="secs" min="0" max="59" step="1" maxlength="2" size="3" required readonly>

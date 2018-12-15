@@ -24,16 +24,15 @@
 	    	<div id="entryPanel" class="entryPanel">
 			<h4>VIEW THE DETAILS FROM A COURSE</h4>
 			<br/>
-			<h4>COURSE</h4>
+			<h5>COURSE</h5>
 			<select name="courses" onchange="this.form.submit()">
 				<% for(ArrayList<String> crse: crseList) { %>
 					<option value="<%= crse.get(0) %>" <% if(Integer.parseInt(crse.get(0)) == selCrse) {%> selected="selected" <% }; %>><%= crse.get(1) %></option>
 					
 				<% } %>
 			</select>
-			
-			
 			<br/><br/>
+			<% if(crseRuns.size() > 0) { %>
 			TOTAL RUNS:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= cRec.calcTotalRuns(selCrse) %> 
 			<br/><br/>
 			MILEAGE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= cRec.getCourseMileage(selCrse) %> 
@@ -53,17 +52,21 @@
 			<br/><br/>
 			AVERAGE RUN TIME:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= cRec.calcCrseAvgTime(selCrse).substring(0,8) %> 
 			<br/><br/>
+			<% } else { %>
+			No run data for the selected Course: <%= cRec.getCourseDesc(selCrse) %>
+			<% } %>
+			
 			</div>
 			</form>	
 			<br/><br/>
 			<h4>COMPLETED RUNS: <% out.println(cRec.getCourseDesc(selCrse)); %></h4>
 			<br/><br/>
-			<TABLE>
+			<TABLE id="crseCompRuns">
 			<TR>
-			<TH style="text-align: center;">DATE</TH>
-			<TH style="text-align: center;">COURSE</TH>
-			<TH style="text-align: center;">MILEAGE</TH>
-			<TH style="text-align: center;">TIME</TH>
+			<TH style="text-align: center;" class="date">DATE</TH>
+			<TH style="text-align: center;" class="course">COURSE</TH>
+			<TH style="text-align: center;" class="miles">MILEAGE</TH>
+			<TH style="text-align: center;" class="time">TIME</TH>
 			</TR>
 			<% for(int row = 0; row < crseRuns.size(); row++) {    %>
 			<TR>

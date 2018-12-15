@@ -50,6 +50,70 @@ table#menuTable tr:nth-child(odd) {
 	padding-top:	0px;
 }
 
+table#crseCompRuns {
+	width:		85%;
+}
+
+table#crseCompRuns th.date th.miles th.time {
+	width:		20%;
+}
+
+table#crseCompRuns th.course {
+	width:		40%;
+}
+
+table#annCompRuns {
+	width:		85%;
+}
+
+table#annCompRuns th.date th.miles th.time {
+	width:		17%;
+}
+
+table#annCompRuns th.cid {
+	width:		14%;
+}
+
+table#annCompRuns th.course {
+	width:		35%;
+}
+
+table#lifeCompRuns {
+	width:		85%;
+}
+
+table#lifeCompRuns th.date th.miles th.time {
+	width:		17%;
+}
+
+table#lifeCompRuns th.cid th.rid {
+	width:		12%;
+}
+
+table#lifeCompRuns th.course {
+	width:		25%;
+}
+
+table#compRecs {
+	width:		85%;
+}
+
+table#compRecs th.rid th.miles th.total {
+	width:		8%;
+}
+
+table#compRecs th.time {
+	width:		11%;
+}
+
+table#compRecs th.date {
+	width:		13%;
+}
+
+table#compRecs th.course {
+	width:		17%;
+}
+
 
 .main {
   	height: 100%;
@@ -116,12 +180,23 @@ table#menuTable tr:nth-child(odd) {
 
 .entryPanel h4 {
 	font-size:		16px;
+	text-align:		center;
+	color:			#8b0000;
+	font-family: 	Arial, Helvetica, sans-serif;
+	font-weight:	bold;
+	margin:		 	0px;
+    padding:		10px;
+}
+
+.entryPanel h5 {
+	font-size:		16px;
 	text-align:		left;
 	color:			#8b0000;
 	font-family: 	Arial, Helvetica, sans-serif;
 	font-weight:	bold;
 	margin:		 	0px;
     padding:		10px;
+    padding-left:	0px;
 }
 
 .main table {

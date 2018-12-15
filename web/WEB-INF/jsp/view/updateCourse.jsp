@@ -37,6 +37,7 @@
 			<form method="post">
 	    	<div id="entryPanel" class="entryPanel">
 			<h4>UPDATE SELECTED COURSE</h4> 
+			<br/><br/>
 			<input type="hidden" name="crseId" id="crseId">
 			Course: <input type="text" name="crseDesc" id="crseDesc" maxlength="50"  required readonly>
 			Miles: <input type="number" name="crseMiles" id="crseMiles" min="0.01" max="500" step="0.01"  required readonly>
