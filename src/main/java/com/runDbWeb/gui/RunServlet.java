@@ -61,6 +61,9 @@ public class RunServlet extends HttpServlet {
     		case "annualDetail":
     			this.showAnnualDetail(request, response);
     			break;
+    		case "courseDetail":
+    			this.showCourseDetail(request, response);
+    			break;
     		case "lifeDetail":
     			this.showLifeDetail(request, response);
     			break;
@@ -101,6 +104,9 @@ public class RunServlet extends HttpServlet {
         	case "annualDetail":
         		this.showAnnualDetail(request, response);
         		break;
+    		case "courseDetail":
+    			this.showCourseDetail(request, response);
+    			break;
         	case "lifeDetail":
         		this.showLifeDetail(request, response);
         		break;
@@ -132,6 +138,26 @@ public class RunServlet extends HttpServlet {
         request.setAttribute("lifeRecs", lifeRecs);
 
     	request.getRequestDispatcher("/WEB-INF/jsp/view/showLifeDetail.jsp").forward(request, response);
+    }
+
+    private void showCourseDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    	CourseRecord crec = new CourseRecord();
+        request.setAttribute("cRec", crec);
+       
+        Course course = new Course();
+        ArrayList<ArrayList<String>> crseList = course.getCrseList();
+        request.setAttribute("crseList", crseList);
+
+        String selCrse = request.getParameter("courses");
+        if(selCrse == null)
+            selCrse = crseList.get(0).get(0);
+
+        request.setAttribute("selCrse", selCrse);
+        ArrayList<ArrayList<String>> crseRuns = crec.getCrseData(Integer.parseInt(selCrse));
+        request.setAttribute("crseRuns", crseRuns);
+        
+        request.getRequestDispatcher("/WEB-INF/jsp/view/showCourseDetail.jsp").forward(request, response);
     }
 
     private void showAnnualDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -336,11 +362,6 @@ public class RunServlet extends HttpServlet {
         request.setAttribute("crseList", crseList);
         
     	request.getRequestDispatcher("/WEB-INF/jsp/view/deleteCourse.jsp").forward(request, response);
-    }
-
-    private void showCourseDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    	request.getRequestDispatcher("/WEB-INF/jsp/view/showCourseDetail.jsp").forward(request, response);
     }
 
 

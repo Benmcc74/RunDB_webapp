@@ -17,6 +17,7 @@
 			<TR><TD><a href="<c:url value="/runs"> <c:param name="action" value="updateCourse" /> </c:url>">Update a Course</a></TD></TR>
 			<TR><TD><a href="<c:url value="/runs"> <c:param name="action" value="deleteCourse" /> </c:url>">Delete a Course</a></TD></TR>
 			<TR><TD id="sideBuff" class="sideBuff"></TD></TR>
+			<TR><TD><a href="<c:url value="/runs"> <c:param name="action" value="courseDetail" /> </c:url>">Course Records</a></TD></TR>
 			<TR><TD><a href="<c:url value="/runs"> <c:param name="action" value="annualDetail" /> </c:url>">Annual Records</a></TD></TR>
 			<TR><TD><a href="<c:url value="/runs"> <c:param name="action" value="lifeDetail" /> </c:url>">Lifetime Records</a></TD></TR>
 		</TABLE>
