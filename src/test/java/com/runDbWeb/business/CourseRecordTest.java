@@ -76,7 +76,7 @@ public class CourseRecordTest {
         for(int rec = 0; rec <lifeRecs.size(); rec++) {
 			int id = Integer.parseInt(lifeRecs.get(rec).get(0));
 			Assert.assertTrue(crseRec.getCrseData(id).size() > 0);
-			Assert.assertTrue(crseRec.getCrseData(id).get(0).size() == 4);
+			Assert.assertTrue(crseRec.getCrseData(id).get(0).size() == 5);
 		}
 
 		Assert.assertTrue(crseRec.getCrseData(0).size() == 0);

@@ -16,18 +16,18 @@
 			<br/><br/>
 			<form method="post">
 	    	<div id="entryPanel" class="entryPanel">
-			<h4>NEW COURSE DETAILS</h4> 
-			<br/><br/>
-			Course: <input type="text" name="crseDesc" maxlength="50" required>
-			Miles: <input type="number" name="crseMiles" min="0.01" max="500" step="0.01" required>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<input type="submit" value="Add a Course"> 
-			<br/><br/>
+				<h4>NEW COURSE DETAILS</h4> 
+					Course: &nbsp; <input type="text" name="crseDesc" maxlength="100" size="40" required>
+					<br/><br/>
+					Miles: &nbsp;&nbsp;&nbsp;&nbsp; <input type="number" name="crseMiles" min="0.01" max="500" step="0.01" size="40" required>
+					<br/><br/>
+					<input type="submit" value="Add a Course"> 
+				<br/><br/>
 			</div>
 			</form>
 			<h4>EXISTING COURSES</h4>
 			<br/>			
-			<TABLE>
+			<TABLE id="crseTable">
 			<TR>
 			<TH style="text-align: center;">ID</TH>
 			<TH style="text-align: center;">DESCRIPTION</TH>

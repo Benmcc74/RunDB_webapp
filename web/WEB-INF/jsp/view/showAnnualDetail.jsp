@@ -29,12 +29,14 @@
 				<% } %>
 			</select>
 			<br/><br/>
+			<br/><br/>
 			TOTAL RUNS:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= arec.getTotalRuns(selYear) %> 
 			<br/><br/>
 			TOTAL MILES:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= arec.getTotalMiles(selYear) %>
 			<br/><br/>
 			</div>
 			</form>	
+			<br/>
 			<h4><% out.println(selYear); %> RECORDS</h4>
 			<br/>
 			<TABLE id="compRecs">
@@ -65,11 +67,12 @@
 		
 			</TABLE>
 
-			<br/><br/>
+			<br/>
 			<h4>COMPLETED RUNS IN <% out.println(selYear); %></h4>
-			<br/><br/>
-			<TABLE id="annCompRuns">
+			<br/>
+			<TABLE id="compRuns">
 			<TR>
+			<TH style="text-align: center;" class="rid">RUN ID</TH>
 			<TH style="text-align: center;" class="date">DATE</TH>
 			<TH style="text-align: center;" class="course">COURSE</TH>
 			<TH style="text-align: center;" class="cid">COURSE ID</TH>
@@ -79,10 +82,11 @@
 			<% for(int row = 0; row <annRuns.size(); row++) {    %>
 			<TR>
 			<TD style="text-align: center;"><%= annRuns.get(row).get(0) %></TD>
-			<TD style="text-align: left;"><%= annRuns.get(row).get(3) %></TD>
 			<TD style="text-align: center;"><%= annRuns.get(row).get(1) %></TD>
-			<TD style="text-align: center;"><%= annRuns.get(row).get(4) %></TD>
-			<TD style="text-align: center;"><%= annRuns.get(row).get(2).substring(0,8) %></TD>
+			<TD style="text-align: left;"><%= annRuns.get(row).get(4) %></TD>
+			<TD style="text-align: center;"><%= annRuns.get(row).get(2) %></TD>
+			<TD style="text-align: center;"><%= annRuns.get(row).get(5) %></TD>
+			<TD style="text-align: center;"><%= annRuns.get(row).get(3).substring(0,8) %></TD>
 			</TR>
 			<%  }   %>
 		

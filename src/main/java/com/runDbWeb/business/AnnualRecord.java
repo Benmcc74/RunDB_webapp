@@ -167,35 +167,35 @@ public class AnnualRecord {
         
         //get all distinct ID's from dataTable to use in for loop
         for(int i = 0; i < dataTable.size(); i++) {
-            if(!uniqueIds.contains(Integer.valueOf(dataTable.get(i).get(1))))
-                uniqueIds.add(Integer.valueOf(dataTable.get(i).get(1)));
+            if(!uniqueIds.contains(Integer.valueOf(dataTable.get(i).get(2))))
+                uniqueIds.add(Integer.valueOf(dataTable.get(i).get(2)));
         }
         Collections.sort(uniqueIds);
         
         for (Integer uniqueId : uniqueIds) {
             for (ArrayList<String> dataRow : dataTable) {
-                if(uniqueId.equals(Integer.valueOf(dataRow.get(1)))) {
+                if(uniqueId.equals(Integer.valueOf(dataRow.get(2)))) {
                     ttlCtr +=1;
-                    ttlSum += stringToDate(dataRow.get(2).substring(0,8));
+                    ttlSum += stringToDate(dataRow.get(3).substring(0,8));
                     tempCrseData[0] = uniqueId.toString();
                     if(tempCrseData[1].equals("00:00:00")) {
-                        tempCrseData[1] = dataRow.get(2).substring(0,8);
-                        tempCrseData[2] = dataRow.get(0);
-                        tempCrseData[3] = dataRow.get(2).substring(0,8);
-                        tempCrseData[4] = dataRow.get(0);
+                        tempCrseData[1] = dataRow.get(3).substring(0,8);
+                        tempCrseData[2] = dataRow.get(1);
+                        tempCrseData[3] = dataRow.get(3).substring(0,8);
+                        tempCrseData[4] = dataRow.get(1);
                     } else {
-                        if(stringToDate(dataRow.get(2).substring(0,8)).compareTo(stringToDate(tempCrseData[1])) < 0) {
-                            tempCrseData[1] = dataRow.get(2).substring(0,8);
-                            tempCrseData[2] = dataRow.get(0);
+                        if(stringToDate(dataRow.get(3).substring(0,8)).compareTo(stringToDate(tempCrseData[1])) < 0) {
+                            tempCrseData[1] = dataRow.get(3).substring(0,8);
+                            tempCrseData[2] = dataRow.get(1);
                         } else {
-                            if(stringToDate(dataRow.get(2).substring(0,8)).compareTo(stringToDate(tempCrseData[3])) > 0) {
-                                tempCrseData[3] = dataRow.get(2).substring(0,8);
-                                tempCrseData[4] = dataRow.get(0);
+                            if(stringToDate(dataRow.get(3).substring(0,8)).compareTo(stringToDate(tempCrseData[3])) > 0) {
+                                tempCrseData[3] = dataRow.get(3).substring(0,8);
+                                tempCrseData[4] = dataRow.get(1);
                             }        
                         }
                     } 
-                    tempCrseData[7] = dataRow.get(3);
-                    tempCrseData[8] = dataRow.get(4);
+                    tempCrseData[7] = dataRow.get(4);
+                    tempCrseData[8] = dataRow.get(5);
                 }
             }
             

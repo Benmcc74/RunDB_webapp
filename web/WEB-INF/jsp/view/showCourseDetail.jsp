@@ -23,7 +23,6 @@
 			<form method="post">
 	    	<div id="entryPanel" class="entryPanel">
 			<h4>VIEW THE DETAILS FROM A COURSE</h4>
-			<br/>
 			<h5>COURSE</h5>
 			<select name="courses" onchange="this.form.submit()">
 				<% for(ArrayList<String> crse: crseList) { %>
@@ -35,7 +34,7 @@
 			<% if(crseRuns.size() > 0) { %>
 			TOTAL RUNS:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= cRec.calcTotalRuns(selCrse) %> 
 			<br/><br/>
-			MILEAGE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= cRec.getCourseMileage(selCrse) %> 
+			MILEAGE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= cRec.getCourseMileage(selCrse) %> 
 			<br/><br/>
 			<br/><br/>
 			BEST COURSE RECORD:
@@ -44,36 +43,44 @@
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= cRec.calcCrseBestTime(selCrse).get(1).substring(0,8) %>
 			<br/><br/>
 			<br/><br/>
+			<br/><br/>
+			AVERAGE RUN TIME:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= cRec.calcCrseAvgTime(selCrse).substring(0,8) %> 
+			<br/><br/>
+			<br/><br/>
+			<br/><br/>
 			WORST COURSE RECORD:
 			<br/><br/>
 			<%= cRec.calcCrseWorstTime(selCrse).get(0) %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= cRec.calcCrseWorstTime(selCrse).get(1).substring(0,8) %>
 			<br/><br/>
-			<br/><br/>
-			AVERAGE RUN TIME:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= cRec.calcCrseAvgTime(selCrse).substring(0,8) %> 
-			<br/><br/>
 			<% } else { %>
+			<br/><br/>
 			No run data for the selected Course: <%= cRec.getCourseDesc(selCrse) %>
+			<br/><br/>
 			<% } %>
 			
 			</div>
 			</form>	
-			<br/><br/>
+			<br/>
 			<h4>COMPLETED RUNS: <% out.println(cRec.getCourseDesc(selCrse)); %></h4>
-			<br/><br/>
-			<TABLE id="crseCompRuns">
+			<br/>
+			<TABLE id="compRuns">
 			<TR>
+			<TH style="text-align: center;" class="rid">RUN ID</TH>
 			<TH style="text-align: center;" class="date">DATE</TH>
 			<TH style="text-align: center;" class="course">COURSE</TH>
+			<TH style="text-align: center;" class="cid">COURSE ID</TH>
 			<TH style="text-align: center;" class="miles">MILEAGE</TH>
 			<TH style="text-align: center;" class="time">TIME</TH>
 			</TR>
 			<% for(int row = 0; row < crseRuns.size(); row++) {    %>
 			<TR>
 			<TD style="text-align: center;"><%= crseRuns.get(row).get(0) %></TD>
-			<TD style="text-align: left;"><%= crseRuns.get(row).get(1) %></TD>
-			<TD style="text-align: center;"><%= crseRuns.get(row).get(2) %></TD>
-			<TD style="text-align: center;"><%= crseRuns.get(row).get(3).substring(0,8) %></TD>
+			<TD style="text-align: center;"><%= crseRuns.get(row).get(1) %></TD>
+			<TD style="text-align: left;"><%= crseRuns.get(row).get(2) %></TD>
+			<TD style="text-align: center;"><%= selCrse %></TD>
+			<TD style="text-align: center;"><%= crseRuns.get(row).get(3) %></TD>
+			<TD style="text-align: center;"><%= crseRuns.get(row).get(4).substring(0,8) %></TD>
 			</TR>
 			<%  }   %>
 		

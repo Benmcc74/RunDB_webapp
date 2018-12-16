@@ -45,53 +45,40 @@ table#menuTable tr:nth-child(odd) {
   height:	35px;
 }
 
-.entryPanel {
-	padding:		40px;
-	padding-top:	0px;
-}
-
-table#crseCompRuns {
+table#compRuns {
 	width:		85%;
 }
 
-table#crseCompRuns th.date th.miles th.time {
-	width:		20%;
-}
-
-table#crseCompRuns th.course {
-	width:		40%;
-}
-
-table#annCompRuns {
-	width:		85%;
-}
-
-table#annCompRuns th.date th.miles th.time {
-	width:		17%;
-}
-
-table#annCompRuns th.cid {
+table#compRuns th.date th.miles th.time {
 	width:		14%;
 }
 
-table#annCompRuns th.course {
-	width:		35%;
+table#compRuns th.cid th.rid {
+	width:		13%;
 }
 
-table#lifeCompRuns {
+table#compRuns th.course {
+	width:		32%;
+}
+
+table#updateTable {
 	width:		85%;
 }
 
-table#lifeCompRuns th.date th.miles th.time {
-	width:		17%;
+table#updateTable th.date th.miles th.time {
+	width:		14%;
 }
 
-table#lifeCompRuns th.cid th.rid {
-	width:		12%;
+table#updateTable th.check {
+	width:		6%;
 }
 
-table#lifeCompRuns th.course {
-	width:		25%;
+table#updateTable th.cid th.rid {
+	width:		11%;
+}
+
+table#updateTable th.course {
+	width:		30%;
 }
 
 table#compRecs {
@@ -113,6 +100,35 @@ table#compRecs th.date {
 table#compRecs th.course {
 	width:		17%;
 }
+
+table#crseTable {
+	width:		75%;
+}
+
+table#crseTable th.cid th.miles {
+	width:		15%;
+}
+
+table#crseTable th.course {
+	width:		70%;
+}
+
+table#crseUpdTable {
+	width:		75%;
+}
+
+table#crseUpdTable th.check {
+	width:		10%;
+}
+
+table#crseUpdTable th.cid th.miles {
+	width:		15%;
+}
+
+table#crseUpdTable th.course {
+	width:		60%;
+}
+
 
 
 .main {
@@ -166,6 +182,15 @@ table#compRecs th.course {
 	border:			1px solid black;
 	margin-bottom:	20px;
 	width:			80%;
+	background-color:	#eeeeee;
+	height:			100%;
+	padding:		40px;
+	padding-top:	0px;
+	column-count:	2;
+	color:			#8b0000;
+	font-family: 	Arial, Helvetica, sans-serif;
+	font-weight:	bold;
+	font-size:		16px;
 }
 
 .entryPanel input[type=submit] {
@@ -176,6 +201,11 @@ table#compRecs th.course {
 	font-weight:	bold;
 	margin:		 	0px;
     padding:		10px;
+    width:			250px;
+}
+
+.entryPanel select {
+    width:			250px;
 }
 
 .entryPanel h4 {
@@ -185,7 +215,8 @@ table#compRecs th.course {
 	font-family: 	Arial, Helvetica, sans-serif;
 	font-weight:	bold;
 	margin:		 	0px;
-    padding:		10px;
+    padding:		25px;
+    column-span:	all;
 }
 
 .entryPanel h5 {
@@ -194,8 +225,9 @@ table#compRecs th.course {
 	color:			#8b0000;
 	font-family: 	Arial, Helvetica, sans-serif;
 	font-weight:	bold;
-	margin:		 	0px;
-    padding:		10px;
+	margin:		 	10px;
+	margin-left:	0px;
+    padding:		0px;
     padding-left:	0px;
 }
 

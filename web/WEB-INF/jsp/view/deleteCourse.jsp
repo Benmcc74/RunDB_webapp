@@ -15,9 +15,9 @@
 				var radiosLength = radios.length;
 				for (var i = 0; i < radiosLength; i++) {
 					if(radios[i].checked) {
-						crseId = document.getElementById("delCrseTable").rows[i + 1].cells.namedItem("tabCrseId").innerHTML;
-						crseDesc = document.getElementById("delCrseTable").rows[i + 1].cells.namedItem("tabCrseDesc").innerHTML;
-						crseMiles = document.getElementById("delCrseTable").rows[i + 1].cells.namedItem("tabCrseMiles").innerHTML;
+						crseId = document.getElementById("crseUpdTable").rows[i + 1].cells.namedItem("tabCrseId").innerHTML;
+						crseDesc = document.getElementById("crseUpdTable").rows[i + 1].cells.namedItem("tabCrseDesc").innerHTML;
+						crseMiles = document.getElementById("crseUpdTable").rows[i + 1].cells.namedItem("tabCrseMiles").innerHTML;
 						document.getElementById("crseId").value=crseId;
 						document.getElementById("crseDesc").value=crseDesc;
 						document.getElementById("crseMiles").value=crseMiles;
@@ -47,17 +47,17 @@
 			<form method="post">
 	    	<div id="entryPanel" class="entryPanel">
 			<h4>DELETE SELECTED COURSE</h4> 
-			<br/><br/>
 			<input type="hidden" name="crseId" id="crseId">
-			Course: <input type="text" name="crseDesc" id="crseDesc" maxlength="50"  required readonly>
-			Miles: <input type="number" name="crseMiles" id="crseMiles" min="0.01" max="500" step="0.01"  required readonly>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			Course: &nbsp; <input type="text" name="crseDesc" id="crseDesc" maxlength="50" size="40" required readonly>
+			<br/><br/>
+			Miles: &nbsp;&nbsp;&nbsp;&nbsp; <input type="number" name="crseMiles" id="crseMiles" min="0.01" max="500" step="0.01"  size="40" required readonly>
+			<br/><br/>
 			<input type="submit" value="Delete the Course"> 
 			<br/><br/>
 			</div>
 			<h4>EXISTING COURSES</h4>
 			<br/>			
-			<TABLE id="delCrseTable">
+			<TABLE id="crseUpdTable">
 			<TR>
 			<TH style="text-align: center;"></TH>
 			<TH style="text-align: center;">ID</TH>

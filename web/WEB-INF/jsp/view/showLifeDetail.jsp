@@ -20,12 +20,12 @@
 			<form method="post">
 	    	<div id="entryPanel" class="entryPanel">
 			<h4>VIEW THE LIFETIME DATA</h4>
-			<br/><br/>
 			TOTAL RUNS:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= lrec.getTotalRuns() %>
 			<br/><br/>
 			TOTAL MILES:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= lrec.getTotalMiles() %>
 			<br/><br/>
 			</div>
+			<br/>
 			<h4>LIFETIME RECORDS</h4>
 			<br/>
 			<TABLE id="compRecs">
@@ -56,13 +56,13 @@
 		
 			</TABLE>
 
-			<br/><br/>
+			<br/>
 			<h4>COMPLETED RUNS</h4>
-			<br/><br/>
-			<TABLE id="lifeCompRuns">
+			<br/>
+			<TABLE id="compRuns">
 			<TR>
-			<TH style="text-align: center;" class="date">DATE</TH>
 			<TH style="text-align: center;" class="rid">RUN ID</TH>
+			<TH style="text-align: center;" class="date">DATE</TH>
 			<TH style="text-align: center;" class="course">COURSE</TH>
 			<TH style="text-align: center;" class="cid">COURSE ID</TH>
 			<TH style="text-align: center;" class="miles">MILEAGE</TH>
@@ -70,8 +70,8 @@
 			</TR>
 			<% for(int row = 0; row <lifeRuns.size(); row++) {    %>
 			<TR>
-			<TD style="text-align: center;"><%= lifeRuns.get(row).get(0) %></TD>
 			<TD style="text-align: center;"><%= lifeRuns.get(row).get(5) %></TD>
+			<TD style="text-align: center;"><%= lifeRuns.get(row).get(0) %></TD>
 			<TD style="text-align: left;"><%= lifeRuns.get(row).get(3) %></TD>
 			<TD style="text-align: center;"><%= lifeRuns.get(row).get(1) %></TD>
 			<TD style="text-align: center;"><%= lifeRuns.get(row).get(4) %></TD>

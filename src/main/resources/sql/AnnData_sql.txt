@@ -1,6 +1,7 @@
-SELECT	a.runDate,
-	b.ID,
-	a.runTime,
+SELECT	a.runId,
+		a.runDate,
+		b.ID,
+		a.runTime,
         b.Description,
         b.Mileage
 FROM	CompletedRuns a
