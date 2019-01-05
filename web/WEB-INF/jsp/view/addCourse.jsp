@@ -1,4 +1,5 @@
 <%@ page session="false" import="java.util.ArrayList" %>
+<%--@elvariable id="crseList" type="java.util.ArrayList"--%>
 <%
 	ArrayList<ArrayList<String>> crseList = (ArrayList<ArrayList<String>>)request.getAttribute("crseList");
 %>
