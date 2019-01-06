@@ -1,10 +1,18 @@
 <%@ page session="false" import="java.util.ArrayList" %>
-<%
+<%--Add request attributes as @elvariable - not necessary for processing but tells IDE type 
+	Request attributes (e.g. crseList) defined as @elvariable for use in Expression Language 
+	Request attributes also defined as object for use in Java --%>
+<%--@elvariable id="crseList" type="java.util.ArrayList"--%>
+<%--@elvariable id="delFailed" type="java.lang.Boolean"--%>
+<%--@elvariable id="delCrseId" type="java.lang.Integer"--%>
+<%--@elvariable id="delCrseDesc" type="java.lang.String"--%>
+<!-- The EL above replaces the following Java -->
+<%--
 	ArrayList<ArrayList<String>> crseList = (ArrayList<ArrayList<String>>)request.getAttribute("crseList");
 	Boolean delFailed = (Boolean)request.getAttribute("delFailed");
 	Integer delCrseId = (Integer)request.getAttribute("delCrseId");
 	String delCrseDesc = "";
-%>
+--%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -33,16 +41,28 @@
     	<div id="main" class="main">
         	<h2>Runs Database WEB APP </h2>
 			<br/>
-			<h3>DELETE A COURSE</h3>
-			<% if(delFailed) { 
+			<h3>DELETE A COURSE ${delCrseId}</h3>
+
+			<!-- The EL above replaces the following Java -->
+			<c:if test="${delFailed}">
+				<c:forEach var="crse" begin="0" end="${fn:length(crseList)}">
+					<fmt:parseNumber var = "i" type="number" value="${crseList[crse][0]}"/>
+					<c:if test="${i == delCrseId}" >
+						<c:set var="delCrseDesc" value="${crseList[crse][1]}"/>
+					</c:if>
+				</c:forEach> 
+			<%-- if(delFailed) { 
 				for(ArrayList<String> crse: crseList) { 
 					if(Integer.parseInt(crse.get(0)) == delCrseId) {
 						delCrseDesc = crse.get(1);					
 					}
 				}
-			%>
-			The <%= delCrseDesc %> course cannot be deleted unless runs using it are deleted or updated first.<br/><br/>
-			<%} %>			
+			--%>
+			The <c:out value="${delCrseDesc}" /> course cannot be deleted unless runs using it are deleted or updated first.<br/><br/>
+			</c:if>
+			<!-- The EL above replaces the following Java -->
+			<%-- delCrseDesc --%>
+			<%--} --%>			
 			<br/><br/>
 			<form method="post">
 	    	<div id="entryPanel" class="entryPanel">
@@ -64,14 +84,20 @@
 			<TH style="text-align: center;">COURSE</TH>
 			<TH style="text-align: center;">MILEAGE</TH>
 			</TR>
-			<% for(int row = 0; row <crseList.size(); row++) {    %>
+			<c:forEach var="row" begin="0" end="${fn:length(crseList)}"> 
+			<!-- The EL above replaces the following Java -->
+			<%-- for(int row = 0; row <crseList.size(); row++) {    --%>
 			<TR>
 			<TD style="text-align: center;"><input type="radio" name="check" id="check" onclick="setFields(this)"></TD>
-			<TD style="text-align: center;" class="tabCrseId" id="tabCrseId"><%= crseList.get(row).get(0) %></TD>
-			<TD style="text-align: left;" class="tabCrseDesc" id="tabCrseDesc"><%= crseList.get(row).get(1) %></TD>
-			<TD style="text-align: center;" class="tabCrseMiles" id="tabCrseMiles"><%= crseList.get(row).get(2) %></TD>
+			<TD style="text-align: center;" class="tabCrseId" id="tabCrseId"><c:out value="${crseList[row][0]}" /></TD>
+			<TD style="text-align: left;" class="tabCrseDesc" id="tabCrseDesc"><c:out value="${crseList[row][1]}" /></TD>
+			<TD style="text-align: center;" class="tabCrseMiles" id="tabCrseMiles"><c:out value="${crseList[row][2]}" /></TD>
+			<!-- The 3 EL lines above replaces the following Java (1 example)-->
+			<%--  crseList.get(row).get(0)  --%>
 			</TR>
-			<%  }   %>
+			</c:forEach>
+			<!-- The EL above replaces the following Java -->
+			<%--  }   --%>
 			</TABLE>
 			</form>
 			
