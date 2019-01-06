@@ -1,4 +1,5 @@
 <%@ page session="false" import="java.util.ArrayList" %>
+<%--@elvariable id="crseList" type="java.util.ArrayList"--%>
 <%
 	ArrayList<ArrayList<String>> crseList = (ArrayList<ArrayList<String>>)request.getAttribute("crseList");
 %>
@@ -25,7 +26,7 @@
 				<br/><br/>
 			</div>
 			</form>
-			<h4>EXISTING COURSES</h4>
+			<h4>EXISTING COURSES ${fn:length(crseList)}</h4>
 			<br/>			
 			<TABLE id="crseTable">
 			<TR>
