@@ -41,9 +41,8 @@
     	<div id="main" class="main">
         	<h2>Runs Database WEB APP </h2>
 			<br/>
-			<h3>DELETE A COURSE ${delCrseId}</h3>
+			<h3>DELETE A COURSE</h3>
 
-			<!-- The EL above replaces the following Java -->
 			<c:if test="${delFailed}">
 				<c:forEach var="crse" begin="0" end="${fn:length(crseList)}">
 					<fmt:parseNumber var = "i" type="number" value="${crseList[crse][0]}"/>
@@ -51,6 +50,7 @@
 						<c:set var="delCrseDesc" value="${crseList[crse][1]}"/>
 					</c:if>
 				</c:forEach> 
+			<!-- The EL above replaces the following Java -->
 			<%-- if(delFailed) { 
 				for(ArrayList<String> crse: crseList) { 
 					if(Integer.parseInt(crse.get(0)) == delCrseId) {
