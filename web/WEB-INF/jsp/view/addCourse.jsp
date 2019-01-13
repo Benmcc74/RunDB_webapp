@@ -1,14 +1,10 @@
 <%@ page session="false" import="java.util.ArrayList" %>
-<<<<<<< HEAD
-
-=======
 <%--Add request attributes as @elvariable - not necessary for processing but tells IDE type 
 	Request attributes (e.g. crseList) defined as @elvariable for use in Expression Language 
 	Request attributes also defined as object for use in Java --%>
 <%--@elvariable id="crseList" type="java.util.ArrayList"--%>
 <!-- The EL above replaces the following Java -->
 <%--
->>>>>>> develop
 	ArrayList<ArrayList<String>> crseList = (ArrayList<ArrayList<String>>)request.getAttribute("crseList");
 --%>
 <!DOCTYPE html>
