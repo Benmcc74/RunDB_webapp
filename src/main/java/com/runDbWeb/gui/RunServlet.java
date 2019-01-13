@@ -173,8 +173,10 @@ public class RunServlet extends HttpServlet {
 
         ArrayList<ArrayList<String>> arecRuns = annualRec.getAnnualData(selYear);
         ArrayList<ArrayList<String>> arecRecs = annualRec.getAnnualRecs(arecRuns);
+        ArrayList<String> yearList = annualRec.getYearList();
         request.setAttribute("arecRuns", arecRuns);
         request.setAttribute("arecRecs", arecRecs);
+        request.setAttribute("yearList", yearList);
         
         request.getRequestDispatcher("/WEB-INF/jsp/view/showAnnualDetail.jsp").forward(request, response);
     }
